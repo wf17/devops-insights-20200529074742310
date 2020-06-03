@@ -6,7 +6,7 @@ var REQUEST = require('request');
 var request = REQUEST.defaults( {
     strictSSL: false
 });
-
+//var OPENWEATHERURL = "https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=imperial";
 var OPENWEATHERURL = "https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric";
 
 exports.getWeather = function(req, res) {
@@ -27,6 +27,7 @@ exports.getWeather = function(req, res) {
     		//console.error("Failed to send request to openweathermap.org", err);
     	} else {
     		if(body.cod === 200) {
+    			//var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' F';
     			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' C';
     			var response = {city: body.name, weather: weath};
     			return res.status(200).send(response);
@@ -69,7 +70,7 @@ exports.getWeather2 = function(req, res) {
 
 };
 router.get('/getWeather2', exports.getWeather2);
-
+*/
 exports.getWeather3 = function(req, res) {
 	var city = req.query.city;
 	if( (city === null) || (typeof(city) === 'undefined') ) {
@@ -88,6 +89,7 @@ exports.getWeather3 = function(req, res) {
     		//console.error("Failed to send request to openweathermap.org", err);
     	} else {
     		if(body.cod === 200) {
+    			//var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' F';
     			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + 'C';
     			var response = {city: body.name, weather: weath};
     			return res.status(200).send(response);
@@ -99,5 +101,5 @@ exports.getWeather3 = function(req, res) {
 
 };
 router.get('/getWeather3', exports.getWeather3);
-*/
+
 exports.router = router;
