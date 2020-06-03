@@ -57,7 +57,7 @@ describe('Get Weather', function() {
   it('with incomplete city name', function() {
     reqMock = {
       query: {
-        city: 'Hamilton'
+        city: 'Hamilt'
       }
     };
 
@@ -89,7 +89,7 @@ describe('Get Weather', function() {
         }
       ],
       main: {
-        temp: 78
+        temp: 10
       }
     };
 
@@ -103,6 +103,6 @@ describe('Get Weather', function() {
 
     assert(resMock.status.lastCall.calledWith(200), 'Unexpected response:' + resMock.status.lastCall.args);
     assert(resMock.send.lastCall.args[0].city === 'Hamilton', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
-    assert(resMock.send.lastCall.args[0].weather === 'Conditions are cold and temperature is 78 C', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
+    assert(resMock.send.lastCall.args[0].weather === 'Conditions are cold and temperature is 10 C', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
   });
 });

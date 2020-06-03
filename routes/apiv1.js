@@ -69,7 +69,7 @@ exports.getWeather2 = function(req, res) {
 
 };
 router.get('/getWeather2', exports.getWeather2);
-*/
+
 exports.getWeather3 = function(req, res) {
 	var city = req.query.city;
 	if( (city === null) || (typeof(city) === 'undefined') ) {
@@ -99,5 +99,5 @@ exports.getWeather3 = function(req, res) {
 
 };
 router.get('/getWeather3', exports.getWeather3);
-
+*/
 exports.router = router;
