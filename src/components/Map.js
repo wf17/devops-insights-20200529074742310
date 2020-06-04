@@ -17,14 +17,9 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoid2YxNyIsImEiOiJja2Iwc2VncW8wYjU1MnNtdDYxeGZtb
 
 	if(props.responseData.cod === 200) {
         return (
-        <style>
-	body { margin: 0; padding: 0; }
-	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-</style>
         <div id="map"></div>
         )
     }
-    return null
 }
 
 export default Map
