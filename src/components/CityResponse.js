@@ -48,6 +48,14 @@ function CityResponse(props) {
                             <td>Conditions</td>
                             <td>{props.responseData.weather[0].description}</td>
                         </tr>
+                        <tr>
+                            <td>Lon</td>
+                            <td>{props.responseData.coord.lon}</td>
+                        </tr>
+                        <tr>
+                            <td>lat</td>
+                            <td>{props.responseData.coord.lat}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
