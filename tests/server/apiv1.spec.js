@@ -35,24 +35,24 @@ describe('Get Weather', function() {
     assert(resMock.status.lastCall.calledWith(400), 'Unexpected status code:' + resMock.status.lastCall.args);
   });
 
-  it('with valid city name and error from request call', function() {
-    reqMock = {
-      query: {
-        city: 'Hamilton'
-      }
-    };
-
-    const request = function( obj, callback ){
-      callback("error", null, null);
-    };
-
-    apiv1.__set__("request", request);
-
-    apiv1.getWeather(reqMock, resMock);
-
-    assert(resMock.status.lastCall.calledWith(400), 'Unexpected response:' + resMock.status.lastCall.args);
-    assert(resMock.send.lastCall.calledWith('Failed to get the data'), 'Unexpected response:' + resMock.send.lastCall.args);
-  });
+//  it('with valid city name and error from request call', function() {
+//    reqMock = {
+//      query: {
+//        city: 'Hamilton'
+//      }
+//    };
+//
+//    const request = function( obj, callback ){
+//      callback("error", null, null);
+//    };
+//
+//    apiv1.__set__("request", request);
+//
+//    apiv1.getWeather(reqMock, resMock);
+//
+//    assert(resMock.status.lastCall.calledWith(400), 'Unexpected response:' + resMock.status.lastCall.args);
+//    assert(resMock.send.lastCall.calledWith('Failed to get the data'), 'Unexpected response:' + resMock.send.lastCall.args);
+//  });
 
   it('with incomplete city name', function() {
     reqMock = {
