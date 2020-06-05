@@ -58,6 +58,8 @@ function CityResponse(props) {
                         </tr>
                     </tbody>
                 </table>
+                <div id='map' style='width: 400px; height: 300px;'></div>
+      				<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
             </div>
         )
     }
