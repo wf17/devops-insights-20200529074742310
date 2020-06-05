@@ -20,7 +20,7 @@ function Map(props) {
             <div className="col-sm-8">
                 mapboxgl.accessToken = 'pk.eyJ1Ijoid2YxNyIsImEiOiJja2Iwc2VncW8wYjU1MnNtdDYxeGZtbjdoIn0.j4N-CO6JKlROIO2y9eR4eg';
 					var map = new mapboxgl.Map({
-					container: 'map',
+					
 					style: 'mapbox://styles/mapbox/streets-v11',
 					center: [175.28, -37.78],
 					zoom: 8
