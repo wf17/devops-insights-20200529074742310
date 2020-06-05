@@ -83,18 +83,16 @@ describe('Get Weather', function() {
     const body = {
       cod: 200,
       name: 'Hamilton',
+      lon: 175.28,
+        lat: -37.78,
       weather: [
         {
           main: 'cold'
         }
       ],
-      main: [{
+      main: {
         temp: 10
-      }],
-      coord: [{
-        lon: 175.28,
-        lat: -37.78
-      }]
+      }
     };
 
     const request = function( obj, callback ){

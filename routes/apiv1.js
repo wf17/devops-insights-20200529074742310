@@ -7,7 +7,7 @@ var request = REQUEST.defaults( {
     strictSSL: false
 });
 var OPENWEATHERURL = "https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric";
-var link = "https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js";
+//var link = "https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js";
 
 exports.getWeather = function(req, res) {
 	var city = req.query.city;
@@ -36,24 +36,24 @@ exports.getWeather = function(req, res) {
     	}
     });
     
-    request({
-		method: 'GET',
-        url: link,
-  		json: true
-    }, function(err, resp, body) {
-    	if(err) {
-    		res.status(400).send('Failed to get the data');
-    		//console.error("Failed to send request to openweathermap.org", err);
-    	} else {
-    		if(body.cod === 200) {
-    			//var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' C';
-    			var response = {lon: body.coord.lon, lat: body.coord.lat};
-    			return res.status(200).send(response);
-    		} else {
-                return res.status(400).send({msg:'Failed'});
-            }
-    	}
-    });
+//    request({
+//		method: 'GET',
+//        url: link,
+//  		json: true
+//    }, function(err, resp, body) {
+//    	if(err) {
+//    		res.status(400).send('Failed to get the data');
+//    		//console.error("Failed to send request to openweathermap.org", err);
+//    	} else {
+//    		if(body.cod === 200) {
+//    			//var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' C';
+//    			var response = {lon: body.coord.lon, lat: body.coord.lat};
+//    			return res.status(200).send(response);
+//    		} else {
+//                return res.status(400).send({msg:'Failed'});
+//            }
+//    	}
+//    });
 
 };
 router.get('/getWeather', exports.getWeather);
