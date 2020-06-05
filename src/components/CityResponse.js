@@ -58,20 +58,20 @@ function CityResponse(props) {
                         </tr>
                     </tbody>
                 </table>
-                <div id='map' style='width: 400px; height: 300px;'></div>
-      				<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
-
-					mapboxgl.accessToken = 'pk.eyJ1Ijoid2YxNyIsImEiOiJja2Iwc2VncW8wYjU1MnNtdDYxeGZtbjdoIn0.j4N-CO6JKlROIO2y9eR4eg';
-					var map = new mapboxgl.Map({
-					container: 'map',
-					style: 'mapbox://styles/mapbox/streets-v11',
-					center: [12.550343, 55.665957],
-					zoom: 8
-					});
- 
-					var marker = new mapboxgl.Marker()
-					.setLngLat([12.550343, 55.665957])
-					.addTo(map);
+//                <div id='map' style='width: 400px; height: 300px;'></div>
+//      				<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+//
+//					mapboxgl.accessToken = 'pk.eyJ1Ijoid2YxNyIsImEiOiJja2Iwc2VncW8wYjU1MnNtdDYxeGZtbjdoIn0.j4N-CO6JKlROIO2y9eR4eg';
+//					var map = new mapboxgl.Map({
+//					container: 'map',
+//					style: 'mapbox://styles/mapbox/streets-v11',
+//					center: [12.550343, 55.665957],
+//					zoom: 8
+//					});
+// 
+//					var marker = new mapboxgl.Marker()
+//					.setLngLat([12.550343, 55.665957])
+//					.addTo(map);
 		</div>
         )
     }
